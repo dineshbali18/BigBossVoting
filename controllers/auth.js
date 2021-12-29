@@ -71,13 +71,13 @@ exports.signin = (req, res) => {
 };
 
 exports.signout = (req, res) => {
-  res.clearCookie("token");
   res.json({
     message: "User signout successfully"
   });
 };
 
 //protected routes
+// it adds an auth property in request object//very imp
 exports.isSignedIn = expressJwt({
   secret: process.env.SECRET,
   userProperty: "auth",

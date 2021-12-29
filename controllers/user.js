@@ -7,6 +7,8 @@ exports.getUserById = (req, res, next, id) => {
         error: "No user was found in DB"
       });
     }
+    req.encry_password=undefined;
+    req.salt=undefined;
     req.profile = user;
     next();
   });

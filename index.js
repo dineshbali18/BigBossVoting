@@ -29,11 +29,13 @@ const contestantRoutes=require("./routes/contestant")
 const userRoutes=require("./routes/user")
 const authRoutes=require("./routes/auth")
 const otpRoutes=require("./routes/otp")
+const voteRoutes=require("./routes/votes");
 
-app.use("/api",contestantRoutes)
+app.use("/api",contestantRoutes);
 app.use("/api",userRoutes)
 app.use("/api",authRoutes);
 app.use("/api",otpRoutes);
+app.use("/api",voteRoutes);
 
 
 

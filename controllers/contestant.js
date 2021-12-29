@@ -12,7 +12,7 @@ exports.getContestantById=(req,res,next,id)=>{
             error: "No user was found in DB"
           });
         }
-        req.profile = cont;
+        req.contestant = cont;
         next();
       });
 };
@@ -104,15 +104,17 @@ exports.createContestant = (req, res) => {
   });
 };
 
-//////////////////////
+
 
 exports.increVotes=(req,res)=>{
-    contestant.updateOne({_id:req.profile._id},{$inc:{votes:+1}},(err,contestant)=>{
+    contestant.updateOne({_id:req.contestant._id},{$inc:{votes:+1}},(err,contestant)=>{
         if(err){
+          console.log(err);
             return res.status(400).json({
                 err:"count Not Updated"
             })
             }
-            return res.json(contestant);
+            // console.log(contestant)
+            res.json(contestant);
     })
 }

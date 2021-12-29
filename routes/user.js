@@ -10,8 +10,8 @@ const { isSignedIn, isAuthenticated, isAdmin } = require("../controllers/auth");
 
 router.param("userId", getUserById);
 
-router.get("/user/:userId", isSignedIn, isAuthenticated, getUser);
-router.put("/user/:userId", isSignedIn, isAuthenticated, updateUser);
+router.get("/user/:userId/getuser", isSignedIn, isAuthenticated, getUser);
+router.put("/user/:userId/updateuser", isSignedIn, isAuthenticated, updateUser);
 
 
 module.exports = router;
