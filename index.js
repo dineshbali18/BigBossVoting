@@ -40,6 +40,6 @@ app.use("/api",voteRoutes);
 
 
 
-app.listen(5000,()=>{
+app.listen(process.env.PORT,()=>{
     console.log(`app is running at ${5000}`)
 })
