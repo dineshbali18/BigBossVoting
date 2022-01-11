@@ -13,6 +13,9 @@ const contestantSchema=new mongoose.Schema({
         contentType: String,
         // required:true
     },
+    image:{
+        type:String
+    },
     //role ===> nominated
     role:{
         type:Number,
