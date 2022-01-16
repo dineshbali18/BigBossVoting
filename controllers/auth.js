@@ -12,28 +12,28 @@ exports.signup = (req, res) => {
       error: errors.array()[0].msg
     });
   }
-  User.find({phoneNum:req.body.phoneNum}).exec((err,phon)=>{
-            if(phon){
-              return res.status(400).json({
-                  error:"Number has already linked with Other Email"
-                });
-            }
+//   User.find({phoneNum:req.body.phoneNum}).exec((err,phon)=>{
+//             if(phon){
+//               return res.status(400).json({
+//                   error:"Number has already linked with Other Email"
+//                 });
+//             }
 
-          })
-  User.find({email:req.body.email}).exec((err,email)=>{
-            if(email){
-              return res.status(400).json({
-                  error:"Number has already linked with Other Email"
-                });
-            }
+//           })
+//   User.find({email:req.body.email}).exec((err,email)=>{
+//             if(email){
+//               return res.status(400).json({
+//                   error:"Number has already linked with Other Email"
+//                 });
+//             }
 
-          })
+//           })
   const user=new User(req.body);//changed
   user.save((err, user) => {
     if (err) {
         console.log(err);
       return res.status(400).json({
-        err: "Account has linked with other Account"
+        err: "Email or Phone Number had already linked with other Account"
       });
     }
     res.json({
