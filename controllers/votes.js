@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const Contestant = require("../models/contestant");
 
 exports.decrementVotes=(req,res)=>{
     User.updateOne({_id:req.profile._id},{$inc:{votelimit:-1}})
