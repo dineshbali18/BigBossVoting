@@ -34,16 +34,19 @@ exports.sendNameWithPercentages=(req,res)=>{
     }
     var total_votes=0;
         var Percentagesarr=[]
-        var conteName=[]
          contestan.map((conte,index)=>{
-           conteName.push(conte.name)
            total_votes+=conte.votes;
          })
          contestan.map((conte,index)=>{
           var tmp_contestant_per=((conte.votes)/total_votes)*100;
-          Percentagesarr.push(tmp_contestant_per);
+          var obj1={
+            name:conte.name,
+            percentage:tmp_contestant_per
+          }
+          Percentagesarr.push(obj1);
         })
-        res.send({conteName,Percentagesarr})
+        var res1 = Percentagesarr.sort(({percentage:a}, {percentage:b}) => b-a);
+        res.send(res1)
   })
 }
 
