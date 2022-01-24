@@ -46,7 +46,13 @@ exports.sendNameWithPercentages=(req,res)=>{
           Percentagesarr.push(obj1);
         })
         var res1 = Percentagesarr.sort(({percentage:a}, {percentage:b}) => b-a);
-        res.send(res1)
+        var names=[]
+        var percentages=[]
+        res1.map((obj1,index)=>{
+            names.push(obj1.name)
+            percentages.push(obj1.percentage)
+        })
+        res.send({names,percentages})
   })
 }
 
