@@ -20,7 +20,7 @@ exports.getNameById=(req,res)=>{
     if(err){
       return res.json({error:"undefined"})
     }
-    return res.json({userdata.name})
+    return res.json({userdata})
   })
 }
 
