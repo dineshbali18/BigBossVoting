@@ -15,6 +15,7 @@ exports.getUserById = (req, res, next, id) => {
 };
 
 exports.getNameById=(req,res)=>{
+  console.log("ccccccccccccccccccccccccccccccccccccccccccccccccc")
 User.find({_id:req.body.id}).exec((err,data)=>{
   if (err) {
         return res.status(400).json({
