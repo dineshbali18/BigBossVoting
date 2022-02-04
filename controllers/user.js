@@ -14,6 +14,17 @@ exports.getUserById = (req, res, next, id) => {
   });
 };
 
+exports.getNameById=(req,res)=>{
+User.find({_id:req.body.id}).exec((err,data)=>{
+  if (err) {
+        return res.status(400).json({
+          error: "User not Found"
+        });
+      }
+  return res.json(data.name)
+})
+}
+
 exports.getUser = (req, res) => {
   req.profile.salt = undefined;
   req.profile.encry_password = undefined;
