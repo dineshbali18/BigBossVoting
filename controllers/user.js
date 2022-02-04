@@ -16,7 +16,7 @@ exports.getUserById = (req, res, next, id) => {
 
 exports.getNameById=(req,res)=>{
   console.log("ccccccccccccccccccccccccccccccccccccccccccccccccc")
-  return res.json({req.profile.name})
+  return res.json(req.profile.name)
 }
 
 exports.getUser = (req, res) => {
