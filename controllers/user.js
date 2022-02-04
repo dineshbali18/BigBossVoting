@@ -16,13 +16,7 @@ exports.getUserById = (req, res, next, id) => {
 
 exports.getNameById=(req,res)=>{
   console.log("ccccccccccccccccccccccccccccccccccccccccccccccccc")
-User.find({_id:req.body.id}).exec((err,data)=>{
-  if (err) {
-        return res.status(400).json({
-          error: "User not Found"
-        });
-      }
-  return res.json(data.name)
+  return res.json(req.profile.name)
 })
 }
 
