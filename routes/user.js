@@ -13,7 +13,7 @@ router.param("userId", getUserById);
 
 router.get("/user/:userId/getuser", isSignedIn, isAuthenticated, getUser);
 router.put("/user/:userId/updateuser", isSignedIn, isAuthenticated, updateUser);
-router.post("/user/:userId/getname",getNameById);
+router.post("/getname",getNameById);
 
 
 module.exports = router;
