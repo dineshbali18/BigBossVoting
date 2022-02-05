@@ -16,12 +16,13 @@ exports.getUserById = (req, res, next, id) => {
 
 exports.getNameById=(req,res)=>{
   console.log("ccccccccccccccccccccccccccccccccccccccccccccccccc")
-  User.find({_id:req.body}).exec((err,userdata)=>{
-    if(err){
-      return res.json({error:"undefined"})
-    }
-    return res.json(userdata)
-  })
+//   User.find({_id:req.body}).exec((err,userdata)=>{
+//     if(err){
+//       return res.json({error:"undefined"})
+//     }
+//     return res.json(userdata)
+//   })
+  return res.json(req.profile.name)
 }
 
 exports.getUser = (req, res) => {
