@@ -22,7 +22,7 @@ exports.getNameById=(req,res)=>{
 //     }
 //     return res.json(userdata)
 //   })
-  return res.json(req.profile.name)
+  return res.json(name:req.profile.name)
 }
 
 exports.getUser = (req, res) => {
