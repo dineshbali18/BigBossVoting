@@ -22,7 +22,11 @@ exports.getNameById=(req,res)=>{
 //     }
 //     return res.json(userdata)
 //   })
-  return res.json({req.profile.name})
+  var username={
+  "name":req.profile.name
+  }
+  
+  return res.json(username)
 }
 
 exports.getUser = (req, res) => {
