@@ -44,6 +44,9 @@ var userSchema = new mongoose.Schema(
         trim: true,
         required: true,
         unique: true
+    },
+    section:{
+      type:String
     }
   },
   { timestamps: true }
