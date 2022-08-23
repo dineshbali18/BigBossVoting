@@ -35,6 +35,18 @@ exports.getUser = (req, res) => {
   return res.json(req.profile);
 };
 
+exports.deleteEmail=(req,res,next,email)=>{
+  console.log(email);
+  req.email=email;
+  next();
+}
+
+exports.deleteUser=(req,res)=>{
+  User.deleteOne({email:req.email}).exec((err,user)=>{
+    return res.json("deletion done");
+  })
+}
+
 exports.updateUser = (req, res) => {
   User.findByIdAndUpdate(
     { _id: req.profile._id },
